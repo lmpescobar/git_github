@@ -1,16 +1,6 @@
 # Cambios en los archivos
 
-### Imágenes
-
-1. **Primera Imagen:**
-   - Se ha creado y editado el archivo `instalaciones.md` en el directorio `03-INSTALACIONES/`.
-   - Contenido del archivo: Instrucciones para instalar usando `yarn install`.
-
-2. **Segunda Imagen:**
-   - Muestra las diferencias entre el archivo `instalaciones.md` en el área de preparación y el directorio de trabajo.
-   - Adicionalmente, se han añadido comandos `npm install` y `npm start`.
-
-### Comandos Usados
+### Comandos y Explicaciones
 
 #### Inicialización y Primer Commit
 
@@ -18,64 +8,93 @@
    ```sh
    git init
    ```
+   - **Propósito:** Inicializa un nuevo repositorio de Git en el directorio actual.
+   - **Efecto:** Crea una carpeta `.git` en el directorio actual.
 
-2. **Crear un commit inicial (Esto parece que fue un error, ya que no se añadió el archivo antes del commit)**:
-   ```sh
-   git commit -m "Instalaciones.md agragado"
-   ```
-   Debería haberse usado `git add .` antes de este commit para añadir el archivo `instalaciones.md` al área de preparación.
-
-3. **Ver el historial de commits**:
-   ```sh
-   git log
-   ```
-
-#### Comparar Cambios
-
-4. **Ver diferencias entre el directorio de trabajo y el índice (staging area)**:
-   ```sh
-   git diff
-   ```
-   Esto muestra las diferencias entre el archivo `instalaciones.md` en el directorio de trabajo y la última versión en el índice o el último commit.
-
-5. **Añadir todos los cambios al área de preparación**:
+2. **Añadir todos los archivos al área de preparación**:
    ```sh
    git add .
    ```
+   - **Propósito:** Añade todos los archivos en el directorio actual y sus subdirectorios al área de preparación.
+   - **Efecto:** Todos los archivos están listos para ser confirmados en el próximo commit.
 
-6. **Ver diferencias entre el directorio de trabajo y el índice nuevamente**:
+3. **Crear un commit inicial**:
+   ```sh
+   git commit -m "Instalaciones.md agregado"
+   ```
+   - **Propósito:** Crea un commit con los archivos añadidos al área de preparación.
+   - **Efecto:** Guarda una versión del proyecto con el mensaje "Instalaciones.md agregado".
+
+#### Ver el Historial de Commits y Diferencias
+
+4. **Ver el historial de commits**:
+   ```sh
+   git log
+   ```
+   - **Propósito:** Muestra el historial de commits en el repositorio.
+   - **Efecto:** Proporciona información sobre los commits realizados, incluyendo el hash, autor, fecha y mensaje de cada commit.
+
+5. **Ver diferencias entre el directorio de trabajo y el índice** (dos veces):
+   ```sh
+   git diff
+   git diff
+   ```
+   - **Propósito:** Muestra las diferencias entre el archivo `instalaciones.md` en el directorio de trabajo y la última versión en el índice o el último commit.
+   - **Efecto:** Muestra cualquier cambio no confirmado.
+
+#### Añadir Cambios y Verificar Estado
+
+6. **Añadir todos los cambios al área de preparación**:
+   ```sh
+   git add .
+   ```
+   - **Propósito:** Añade todos los archivos modificados y nuevos al área de preparación.
+   - **Efecto:** Todos los cambios están listos para ser confirmados en el próximo commit.
+
+7. **Ver diferencias entre el directorio de trabajo y el índice nuevamente**:
    ```sh
    git diff
    ```
+   - **Propósito:** Muestra las diferencias entre los archivos en el directorio de trabajo y la última versión en el índice o el último commit.
+   - **Efecto:** Proporciona una vista de los cambios no confirmados.
 
-7. **Ver el estado del repositorio**:
+8. **Ver el estado del repositorio**:
    ```sh
    git status
    ```
+   - **Propósito:** Muestra el estado actual del repositorio.
+   - **Efecto:** Indica qué archivos han sido modificados, añadidos, eliminados y cuáles están en el área de preparación.
 
-8. **Ver diferencias entre el índice (staging area) y el último commit**:
+9. **Ver diferencias entre el índice (staging area) y el último commit**:
    ```sh
    git diff --staged
    ```
+   - **Propósito:** Muestra las diferencias entre los archivos en el área de preparación y la última versión confirmada.
+   - **Efecto:** Proporciona una vista de los cambios que están a punto de ser confirmados.
 
-#### Crear un Commit con Cambios
+#### Crear un Segundo Commit y Revertir Cambios
 
-9. **Crear un commit con los cambios en el área de preparación**:
-   ```sh
-   git commit -m "Instalaciones actualizadas"
-   ```
+10. **Crear un commit con los cambios en el área de preparación**:
+    ```sh
+    git commit -m "Instalaciones actualizadas"
+    ```
+    - **Propósito:** Crea un commit con los cambios añadidos al área de preparación.
+    - **Efecto:** Guarda una nueva versión del proyecto con el mensaje "Instalaciones actualizadas".
 
-#### Verificar y Revertir Cambios
-
-10. **Ver diferencias entre el directorio de trabajo y el índice después del commit**:
+11. **Ver diferencias después del segundo commit** (dos veces):
     ```sh
     git diff
+    git diff
     ```
+    - **Propósito:** Muestra las diferencias entre el directorio de trabajo y el índice después del commit.
+    - **Efecto:** Confirma que no hay cambios adicionales no confirmados.
 
-11. **Revertir todos los cambios no confirmados en el directorio de trabajo**:
+12. **Revertir todos los cambios no confirmados en el directorio de trabajo**:
     ```sh
     git checkout -- .
     ```
+    - **Propósito:** Revertir todos los cambios no confirmados en el directorio de trabajo.
+    - **Efecto:** Restaura todos los archivos a su estado en el último commit confirmado.
 
 ### Flujo Completo de Comandos
 
@@ -83,7 +102,7 @@
 # Inicializar un nuevo repositorio de Git
 git init
 
-# Añadir archivos al área de preparación
+# Añadir todos los archivos al área de preparación
 git add .
 
 # Crear un commit inicial
@@ -92,7 +111,8 @@ git commit -m "Instalaciones.md agregado"
 # Ver el historial de commits
 git log
 
-# Ver diferencias entre el directorio de trabajo y el índice
+# Ver diferencias entre el directorio de trabajo y el índice (dos veces)
+git diff
 git diff
 
 # Añadir todos los cambios al área de preparación
@@ -110,33 +130,14 @@ git diff --staged
 # Crear un commit con los cambios en el área de preparación
 git commit -m "Instalaciones actualizadas"
 
-# Ver diferencias entre el directorio de trabajo y el índice después del commit
+# Ver diferencias entre el directorio de trabajo y el índice después del commit (dos veces)
+git diff
 git diff
 
 # Revertir todos los cambios no confirmados en el directorio de trabajo
 git checkout -- .
 ```
 
-### Explicación del Proceso
-
-1. **Inicialización y Preparación**:
-   - `git init` inicializa un nuevo repositorio.
-   - `git add .` añade todos los archivos al área de preparación.
-   - `git commit -m "Instalaciones.md agregado"` crea el commit inicial (asegúrate de añadir los archivos primero).
-
-2. **Comparar y Añadir Cambios**:
-   - `git diff` muestra diferencias no confirmadas.
-   - `git add .` añade todos los cambios al área de preparación.
-   - `git status` muestra el estado actual del repositorio.
-   - `git diff --staged` muestra diferencias entre el índice y el último commit.
-
-3. **Confirmar Cambios**:
-   - `git commit -m "Instalaciones actualizadas"` crea un commit con los cambios preparados.
-
-4. **Verificar y Revertir**:
-   - `git diff` después del commit para ver si hay diferencias adicionales.
-   - `git checkout -- .` para revertir todos los cambios no confirmados en el directorio de trabajo.
-
 ### Conclusión
 
-Este flujo de trabajo cubre la inicialización del repositorio, la adición de archivos, la comparación de cambios, la preparación de commits y la reversión de cambios no deseados. Estos comandos y pasos son esenciales para gestionar eficazmente un proyecto con Git, permitiendo un control preciso sobre el estado y la evolución del repositorio.
+Estos comandos te permiten inicializar un repositorio, añadir archivos, crear commits, comparar cambios, y revertir cambios no deseados. Usar estos comandos te ayudará a gestionar tu proyecto de manera eficiente, manteniendo un historial claro y conciso de todas las modificaciones realizadas.
