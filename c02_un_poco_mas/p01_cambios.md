@@ -1,6 +1,5 @@
 # Cambios en los archivos
 
-
 ### **1. Inicializar un Repositorio y Hacer el Primer Commit**
 
 - **Inicializar un nuevo repositorio:**
